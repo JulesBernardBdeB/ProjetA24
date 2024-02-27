@@ -29,12 +29,8 @@ public class UserController {
                                                 + "- entre 12 et 20 caractères.");
         }
 
-
         // Créer un objet User avec les informations fournies
         User user = new User(firstName, lastName, username, password);
-
-        // Ajouter l'utilisateur à la base de données
-        dbHelper.addUser(user);
     }
 
     private boolean isValidUsername(String username) {
