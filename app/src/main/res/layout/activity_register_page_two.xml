@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data/>
+    <!-- Layout principal de la page de connexion -->
+    <LinearLayout android:id="@+id/linearRegisterPage"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylebluegray_900">
+
+        <!-- Titre "Welcome back" -->
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtWelcomeback"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_46pxv"
+            android:layout_width="wrap_content"
+            android:lineSpacingExtra="@dimen/_8pxh"
+            android:singleLine="true"
+            android:text="@string/lbl_welcome_back"
+            style="@style/txtPoppinsregular16" tools:text="@string/lbl_welcome_back"/>
+
+        <!-- Text "Log In -->
+        <TextView android:ellipsize="end" android:id="@+id/txtLogin"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_150pxh"
+            android:layout_marginStart="@dimen/_150pxh"
+            android:layout_marginTop="@dimen/_1pxv"
+            android:layout_width="wrap_content"
+            android:lineSpacingExtra="@dimen/_10pxh"
+            android:singleLine="true" android:text="@string/lbl_log_in2"
+            style="@style/txtPoppinsbold20" tools:text="@string/lbl_log_in2"/>
+
+        <!-- Champ pour l'adresse e-mail -->
+        <EditText
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_900_radius_14"
+            android:drawablePadding="@dimen/_11pxh"
+            android:drawableStart="@drawable/img_user"
+            android:ellipsize="end" android:hint="@string/lbl_email"
+            android:id="@+id/etLabel"
+            android:inputType="textEmailAddress"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_33pxv"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_6pxh"
+            android:paddingBottom="@dimen/_15pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_16pxh"
+            android:paddingTop="@dimen/_14pxv" android:singleLine="true"
+            android:textColorHint="@color/gray_500"
+            style="@style/etSolidRoundedOutline" tools:ignore="Autofill"/>
+
+        <!-- Champ pour le mot de passe -->
+        <EditText
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_900_radius_14"
+            android:drawableEnd="@drawable/img_eye"
+            android:drawablePadding="@dimen/_30pxh"
+            android:drawableStart="@drawable/img_location"
+            android:ellipsize="end" android:hint="@string/lbl_password"
+            android:id="@+id/etLabelOne"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_17pxv"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_6pxh"
+            android:paddingBottom="@dimen/_15pxv"
+            android:paddingEnd="@dimen/_17pxh"
+            android:paddingStart="@dimen/_18pxh"
+            android:paddingTop="@dimen/_14pxv" android:singleLine="true"
+            android:textColorHint="@color/gray_500"
+            style="@style/etSolidRoundedOutline" tools:ignore="Autofill"/>
+
+        <!-- Conteneur pour la zone de connexion : Bouton -->
+        <LinearLayout android:gravity="center_vertical"
+            android:id="@+id/linearRowuser"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_138pxv"
+            android:layout_width="match_parent"
+            android:orientation="horizontal" style="@style/groupStylecornerRadius_3">
+
+            <!-- Icône Login -->
+            <ImageView android:id="@+id/imageUser"
+                android:layout_height="@dimen/_20pxh"
+                android:layout_marginBottom="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_120pxh"
+                android:layout_marginTop="@dimen/_20pxv"
+                android:layout_width="@dimen/_19pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_user_white_a700"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_user_white_a700"/>
+
+            <!-- Texte "Login" -->
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtLoginOne"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_16pxv"
+                android:layout_marginEnd="@dimen/_118pxh"
+                android:layout_marginStart="@dimen/_12pxh"
+                android:layout_marginTop="@dimen/_19pxv"
+                android:layout_weight="0.7" android:layout_width="0dp"
+                android:lineSpacingExtra="@dimen/_8pxh"
+                android:singleLine="true"
+                android:text="@string/lbl_login"
+                style="@style/txtPoppinsbold16_1" tools:text="@string/lbl_login"/>
+        </LinearLayout>
+
+        <!-- TextView affichant un message pour les utilisateurs qui n'ont pas de compte -->
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtConfirmation"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_97pxh"
+            android:layout_marginStart="@dimen/_97pxh"
+            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_width="wrap_content"
+            android:lineSpacingExtra="@dimen/_7pxh"
+            android:singleLine="true"
+            android:text="@string/msg_dont_have_an_ac"
+            style="@style/txtPoppinsregular14" tools:text="@string/msg_dont_have_an_ac"/>
+
+        <!-- TextView pour inciter les utilisateurs à créer un compte -->
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtCreateanaccou"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginStart="@dimen/_30pxh"
+            android:layout_marginTop="@dimen/_1pxv"
+            android:layout_width="wrap_content"
+            android:lineSpacingExtra="@dimen/_7pxh"
+            android:singleLine="true"
+            android:text="@string/msg_create_an_accou2"
+            style="@style/txtPoppinsmedium14_1" tools:text="@string/msg_create_an_accou2"/>
+    </LinearLayout>
+</layout>
