@@ -3,57 +3,35 @@ package com.example.a24_fitnessapp.Controller;
 import com.example.a24_fitnessapp.Model.*;
 
 public class UserController {
-    private DatabaseHelper dbHelper;
-
-    public UserController(DatabaseHelper dbHelper) {
-        this.dbHelper = dbHelper;
+    public UserController() {
     }
 
-    public void createUser(String firstName, String lastName, String username, String password) {
-        // Vérifier que le nom d'utilisateur et le mot de passe respectent les critères requis
-        if (!isValidUsername(username)) {
-            // Afficher un message d'erreur ou lancer une exception indiquant que le nom d'utilisateur est invalide
-            throw new IllegalArgumentException("Le nom d'utilisateur doit avoir :\n"
-                                                + "- au moins une lettre majuscule,\n"
-                                                + "- au moins une lettre minuscule,\n"
-                                                + "- au moins un chiffre,\n"
-                                                + "- entre 12 et 20 caractères.");
+    public void createUser(String firstName, String lastName, String email, String password) {
+        // Vérifier que l'email et le mot de passe respectent les critères requis
+        if (!isValidEmail(email)) {
+            // Afficher un message d'erreur ou lancer une exception indiquant que l'email est invalide
+            throw new IllegalArgumentException("L'email doit avoir un format valide.");
         }
 
         if (!isValidPassword(password)) {
-            // Afficher un message d'erreur ou lancer une exception indiquant que le mot de passe est invalide
+            // Afficher un message d'erreur indiquant que le mot de passe n'a pas le bpn format
             throw new IllegalArgumentException("Le mot de passe doit avoir :\n"
-                                                + "- au moins une lettre majuscule,\n"
-                                                + "- au moins une lettre minuscule,\n"
-                                                + "- au moins un chiffre,\n"
-                                                + "- entre 12 et 20 caractères.");
+                    + "- au moins une lettre majuscule,\n"
+                    + "- au moins une lettre minuscule,\n"
+                    + "- au moins un chiffre,\n"
+                    + "- entre 12 et 20 caractères.");
         }
 
         // Créer un objet User avec les informations fournies
-        User user = new User(firstName, lastName, username, password);
+        User user = new User(firstName, lastName, email, password);
     }
 
-    private boolean isValidUsername(String username) {
-        // Vérifier que le nom d'utilisateur a une longueur comprise entre 12 et 20 caractères
-        if (username.length() < 12 || username.length() > 20) {
+    private boolean isValidEmail(String email) {
+        // Vérifier la présence du caractère "@" dans l'email
+        if (!email.contains("@")) {
             return false;
         }
-
-        // Vérifier qu'il y a au moins une lettre majuscule, une lettre minuscule et un chiffre dans le nom d'utilisateur
-        boolean hasUpperCase = false;
-        boolean hasLowerCase = false;
-        boolean hasDigit = false;
-        for (char c : username.toCharArray()) {
-            if (Character.isUpperCase(c)) {
-                hasUpperCase = true;
-            } else if (Character.isLowerCase(c)) {
-                hasLowerCase = true;
-            } else if (Character.isDigit(c)) {
-                hasDigit = true;
-            }
-        }
-
-        return hasUpperCase && hasLowerCase && hasDigit;
+        return true;
     }
 
     private boolean isValidPassword(String password) {
@@ -79,4 +57,5 @@ public class UserController {
         return hasUpperCase && hasLowerCase && hasDigit;
     }
 }
+
 
