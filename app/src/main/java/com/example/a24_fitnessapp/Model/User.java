@@ -1,45 +1,34 @@
 package com.example.a24_fitnessapp.Model;
 
-import java.sql.Array;
-
 public class User {
 
-    private String name;
+    private Long id;
+    private String firstName;
     private String lastName;
-    private String gender;
-    private  int age;
-    private double weight;
-    private double height;
-    private double IMC;
-    private double recWaterIntake;
-    private String goal;
-    private String dietRestrictions[];
-    private String dietPreference[];
-    private int dailyCalorie;
+    private String email;
+    private String password;
 
-    public User(String name, String lastName, String gender, int age, double weight, double height,
-                double IMC, double recWaterIntake, String goal, String[] dietRestrictions, String[]
-                        dietPreference, int dailyCalorie) {
-        this.name = name;
+    public User(String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
         this.lastName = lastName;
-        this.gender = gender;
-        this.age = age;
-        this.weight = weight;
-        this.height = height;
-        this.IMC = IMC;
-        this.recWaterIntake = recWaterIntake;
-        this.goal = goal;
-        this.dietRestrictions = dietRestrictions;
-        this.dietPreference = dietPreference;
-        this.dailyCalorie = dailyCalorie;
+        this.email = email;
+        this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public Long getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -50,84 +39,19 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getGender() {
-        return gender;
+    public String getEmail() {
+        return email;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getAge() {
-        return age;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setPassword(String password) {
+        this.password = password;
     }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public String getGoal() {
-        return goal;
-    }
-
-    public void setGoal(String goal) {
-        this.goal = goal;
-    }
-
-    public String[] getDietRestrictions() {
-        return dietRestrictions;
-    }
-
-    public void setDietRestrictions(String[] dietRestrictions) {
-        this.dietRestrictions = dietRestrictions;
-    }
-
-    public String[] getDietPreference() {
-        return dietPreference;
-    }
-
-    public void setDietPreference(String[] dietPreference) {
-        this.dietPreference = dietPreference;
-    }
-
-    public int getDailyCalorie() {
-        return dailyCalorie;
-    }
-
-    public void setDailyCalorie(int dailyCalorie) {
-        this.dailyCalorie = dailyCalorie;
-    }
-    public double getIMC() {
-        return weight/(height*height);
-    }
-
-    public void setIMC(double IMC) {
-        this.IMC = IMC;
-    }
-
-    public double getRecWaterIntake() {
-        return weight*40;
-    }
-
-    public void setRecWaterIntake(double recWaterIntake) {
-        this.recWaterIntake = recWaterIntake;
-    }
-
-
 }
