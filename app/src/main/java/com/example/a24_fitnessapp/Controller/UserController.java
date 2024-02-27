@@ -29,11 +29,6 @@ public class UserController {
                                                 + "- entre 12 et 20 caractères.");
         }
 
-        // Vérifier que le nom d'utilisateur n'existe pas déjà dans la base de données
-        if (dbHelper.isUserExists(username)) {
-            // Afficher un message d'erreur ou lancer une exception indiquant que le nom d'utilisateur existe déjà
-            return;
-        }
 
         // Créer un objet User avec les informations fournies
         User user = new User(firstName, lastName, username, password);
