@@ -12,13 +12,13 @@ public class User {
     private double height;
     private double IMC;
     private double recWaterIntake;
-    private String goal[];
+    private String goal;
     private String dietRestrictions[];
     private String dietPreference[];
     private int dailyCalorie;
 
     public User(String name, String lastName, String gender, int age, double weight, double height,
-                double IMC, double recWaterIntake, String[] goal, String[] dietRestrictions, String
+                double IMC, double recWaterIntake, String goal, String[] dietRestrictions, String[]
                         dietPreference, int dailyCalorie) {
         this.name = name;
         this.lastName = lastName;
@@ -82,11 +82,11 @@ public class User {
         this.height = height;
     }
 
-    public String[] getGoal() {
+    public String getGoal() {
         return goal;
     }
 
-    public void setGoal(String[] goal) {
+    public void setGoal(String goal) {
         this.goal = goal;
     }
 
@@ -98,11 +98,11 @@ public class User {
         this.dietRestrictions = dietRestrictions;
     }
 
-    public String getDietPreference() {
+    public String[] getDietPreference() {
         return dietPreference;
     }
 
-    public void setDietPreference(String dietPreference) {
+    public void setDietPreference(String[] dietPreference) {
         this.dietPreference = dietPreference;
     }
 
